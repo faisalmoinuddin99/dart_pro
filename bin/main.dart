@@ -14,18 +14,27 @@
 * */
 void main(){
 
-    // Numbers: int
-    int age = 10 ;
+    // Literals
+  var add = 2+2;
+  int x = 4 ;
+  var isCool = true ;
 
-    // Numbers: double
-    var myAge = 93.4 ; // It is inferred as integer automatically
+  // various ways to define String Literals in Dart
+  String s1 = 'single Quote' ;
+  String s2 = "Double Quote" ;
+  String s3 = 'It\'s easy' ;
 
-    //String
-    String name = "Henry" ;
-    var myName = "faisal" ;
+  // String Interpolation
+  String name = "Kevin" ;
+  String message = "My name is $name" ;
 
-    // Boolean
-    bool isVerified = true ;
-    var isAlive = false ;
+  print(message) ;
+  print("The number of characters in String kevin is ${name.length}") ;
+
+  int len = 10 ;
+  int ber = 20 ;
+  print("The sum of length and breadth is ${len * ber}") ;
+
+
 
 }
