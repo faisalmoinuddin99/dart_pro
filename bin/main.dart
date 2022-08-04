@@ -1,40 +1,34 @@
-// Exploring Data Types and Variables
+// constants in dart
+
 /*
-* Dart has special support for these data types
-* 1. Numbers: int, double
-* 2. Strings
-* 3. Booleans
-* 4. List (also known as Arrays)
-* 5. Maps
-* 6. Runes (for expressing Unicode characters in String)
-* 7. Symbols
+* @INFO: If you never want to change a value then use 'final' and 'const' keywords
 *
-* --> NOTE: All data types in Dart are Objects
-*           Therefore, values are by default 'null'
+* Difference between final and const
+*
+* final: final is a runtime constant, variables can only be set once and it is
+*        initialized when accessed.
+*        Hindi -> Jo bhi variable final keyword se initialized hai... un
+*                 variables ko memory allocation runtime pe mil jaiga
+* const: const is a compile time constant, variable is implicitly final
+*
+*
 * */
 void main(){
 
-    // Literals
-  var add = 2+2;
-  int x = 4 ;
-  var isCool = true ;
+    // final keyword
+  final cityName = "Mumbai" ;
+  // cityName = "Delhi" ; -- ERROR
 
-  // various ways to define String Literals in Dart
-  String s1 = 'single Quote' ;
-  String s2 = "Double Quote" ;
-  String s3 = 'It\'s easy' ;
+  final String countryName = 'India' ;
 
-  // String Interpolation
-  String name = "Kevin" ;
-  String message = "My name is $name" ;
+  //const keyword
+  const PI = 3.14 ;
+  const double gravity = 9.8 ;
 
-  print(message) ;
-  print("The number of characters in String kevin is ${name.length}") ;
+}
 
-  int len = 10 ;
-  int ber = 20 ;
-  print("The sum of length and breadth is ${len * ber}") ;
+class Circle {
 
-
-
+  final color = 'Red' ;
+  static const PI = 3.14 ;
 }
