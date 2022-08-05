@@ -1,46 +1,64 @@
-// Optional Positional Parameters
+// Exception Handling
 
 /*
+When normal flow of program is disrupted and application crashes
+Some of the common exception in dart are:
+         1. DeferredLoadException - Thrown when deferred library fails to load.
 
-Parameters : 1. Required
-             2. Optional
-                  a. Positional
-                  b. Named
-                  c. Default
+         2. FormatException - Exception thrown when a string or some other data
+         does not have an expected format and cannot be parsed or processed
 
+         3. IntegerDivisionByZeroException - Thrown when a number is divided by
+         zero.
+
+         4. IOException - Base class all input-output related exceptions.
+
+         5. IsolateSpawnException - Thrown when an isolate cannot be create.
+
+         6. Timeout - Thrown when a scheduled timeout happens while waiting for
+         an async result.
  */
-
 
 void main(){
-  printCities('New York', 'Delhi', 'Sydney') ;
+
+  print('Case 1') ;
+  try {
+    int result = 12 ~/ 0;
+    print('The Result is $result');
+  } on IntegerDivisionByZeroException {
+    print('Cannot divide by Zero') ;
+  }
   print("") ;
-  printCountries('USA') ;
-  findVolume(10, height: 30,breadth: 20) ;
-  myTodos('Office', morning: "Breakfast") ;
-}
+  print('Case 2') ;
+  // CASE 2: When you do not know the exception use CATCH Clause
+  try {
+    int result = 12 ~/ 0;
+    print('The Result is $result');
+  } catch (e) {
+    print('The exception thrown is $e') ;
+  }
+  print("") ;
+  print('Case 3') ;
+  // CASE 3: Using STACK TRACE to know the events occurred before Exception was thrown
+  try {
+    int result = 12 ~/ 0;
+    print('The Result is $result');
+  } catch(e,s) {
+    print('Cannot divide by Zero') ;
+    print('STACK TRACE \n $s');
+  }
 
-// Required Parameters
-void printCities(String name1, String name2, String name3) {
-  print('Name 1 is $name1') ;
-  print('Name 2 is $name2') ;
-  print('Name 3 is $name3') ;
-}
-// Optional Positional
-void printCountries(String name1, [String? name2,String? name3]){
-  print('Name 1 is $name1') ;
-  print('Name 2 is $name2') ;
-  print('Name 3 is $name3') ;
-}
+  print("") ;
+  print('Case 4') ;
+  // CASE 4: Whether there is an Exception or not, FINALLY Clause is always Executed
+  try {
+    int result = 12 ~/ 3;
+    print('The Result is $result');
+  } catch(e) {
+    print('Cannot divide by Zero') ;
 
-// Optional Named Parameter
-/* Prevent errors if there are large number of parameters
-NOTE: Sequence does not matter
- */
-void findVolume(int length, {int? breadth, int? height}) => print(length * breadth! * height! ) ;
+  }finally{
+    print('This is FINALLY Clause and is always executed.') ;
+  }
 
-// Optional Default Parameter
-// You can assign default values to parameters
-void myTodos(String noon,{String? morning = 'Gym'}) {
-  print('Morning work $morning') ;
-  print('Noon work $noon') ;
 }
