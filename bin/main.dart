@@ -1,30 +1,21 @@
-// if and else statements
-/*
-* if(true condition) {
-*   Execute the code if condition is true
-* } else {
-*   Execute code here if condition is false
-* }
-* */
+// condition expressions
+
 void main(){
 
-    // if and else statements
-  var age = 18 ;
-  if(age >= 18) {
-    print('Welcome to Pattaya');
-  }else{
-    print('Go back to India');
-  }
+  // 1. condition ? exp1 : exp2
+ int a = 10 ;
+ int b = 20 ;
+ int largeNumber ;
 
-  // if else if ladder statements
-  var marks = 70 ;
-  if(marks > 90) {
-    print('Eligible for IIT entrance exam');
-  } else if(marks >= 80 && marks < 90){
-    print('Eligible for NIT entrance exam') ;
-  }else if(marks >= 70 && marks < 80) {
-    print('Manipur universities') ;
-  } else {
-    print('Best try next year') ;
-  }
+ largeNumber = (a > b) ? a : b ;
+ print('$largeNumber') ;
+
+ // 2. exp1 ?? exp2
+  /*
+  If exp1 is non-null, returns its value ; otherwise, evaluates and
+  returns the value of exp2 .
+   */
+  String name = 'Tom' ;
+  String nameToPrint = name ?? "Guest User" ;
+  print(nameToPrint) ;
 }
