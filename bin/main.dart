@@ -10,13 +10,13 @@ Parameters : 1. Required
 
  */
 
-import 'package:test/expect.dart';
 
 void main(){
   printCities('New York', 'Delhi', 'Sydney') ;
   print("") ;
   printCountries('USA') ;
   findVolume(10, height: 30,breadth: 20) ;
+  myTodos('Office', morning: "Breakfast") ;
 }
 
 // Required Parameters
@@ -37,3 +37,10 @@ void printCountries(String name1, [String? name2,String? name3]){
 NOTE: Sequence does not matter
  */
 void findVolume(int length, {int? breadth, int? height}) => print(length * breadth! * height! ) ;
+
+// Optional Default Parameter
+// You can assign default values to parameters
+void myTodos(String noon,{String? morning = 'Gym'}) {
+  print('Morning work $morning') ;
+  print('Noon work $noon') ;
+}
