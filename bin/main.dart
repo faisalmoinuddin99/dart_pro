@@ -1,21 +1,23 @@
-// condition expressions
 
 void main(){
+ // Switch Case Statements: Applicable for only 'int' and 'String'
 
-  // 1. condition ? exp1 : exp2
- int a = 10 ;
- int b = 20 ;
- int largeNumber ;
+ String grade = 'A' ;
+ switch(grade) {
+  case 'A':
+   print('Excellent grade of A') ;
+   break ;
 
- largeNumber = (a > b) ? a : b ;
- print('$largeNumber') ;
+  case 'B':
+   print('Very Good !') ;
+   break ;
 
- // 2. exp1 ?? exp2
-  /*
-  If exp1 is non-null, returns its value ; otherwise, evaluates and
-  returns the value of exp2 .
-   */
-  String name = 'Tom' ;
-  String nameToPrint = name ?? "Guest User" ;
-  print(nameToPrint) ;
+  case 'C':
+   print('Good enough, But work hard');
+   break ;
+
+  default:
+   print('You have failed...');
+  }
+
 }
