@@ -10,10 +10,13 @@ Parameters : 1. Required
 
  */
 
+import 'package:test/expect.dart';
+
 void main(){
   printCities('New York', 'Delhi', 'Sydney') ;
   print("") ;
   printCountries('USA') ;
+  findVolume(10, height: 30,breadth: 20) ;
 }
 
 // Required Parameters
@@ -28,3 +31,9 @@ void printCountries(String name1, [String? name2,String? name3]){
   print('Name 2 is $name2') ;
   print('Name 3 is $name3') ;
 }
+
+// Optional Named Parameter
+/* Prevent errors if there are large number of parameters
+NOTE: Sequence does not matter
+ */
+void findVolume(int length, {int? breadth, int? height}) => print(length * breadth! * height! ) ;
