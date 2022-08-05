@@ -1,34 +1,30 @@
-// constants in dart
-
+// if and else statements
 /*
-* @INFO: If you never want to change a value then use 'final' and 'const' keywords
-*
-* Difference between final and const
-*
-* final: final is a runtime constant, variables can only be set once and it is
-*        initialized when accessed.
-*        Hindi -> Jo bhi variable final keyword se initialized hai... un
-*                 variables ko memory allocation runtime pe mil jaiga
-* const: const is a compile time constant, variable is implicitly final
-*
-*
+* if(true condition) {
+*   Execute the code if condition is true
+* } else {
+*   Execute code here if condition is false
+* }
 * */
 void main(){
 
-    // final keyword
-  final cityName = "Mumbai" ;
-  // cityName = "Delhi" ; -- ERROR
+    // if and else statements
+  var age = 18 ;
+  if(age >= 18) {
+    print('Welcome to Pattaya');
+  }else{
+    print('Go back to India');
+  }
 
-  final String countryName = 'India' ;
-
-  //const keyword
-  const PI = 3.14 ;
-  const double gravity = 9.8 ;
-
-}
-
-class Circle {
-
-  final color = 'Red' ;
-  static const PI = 3.14 ;
+  // if else if ladder statements
+  var marks = 70 ;
+  if(marks > 90) {
+    print('Eligible for IIT entrance exam');
+  } else if(marks >= 80 && marks < 90){
+    print('Eligible for NIT entrance exam') ;
+  }else if(marks >= 70 && marks < 80) {
+    print('Manipur universities') ;
+  } else {
+    print('Best try next year') ;
+  }
 }
