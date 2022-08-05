@@ -1,8 +1,16 @@
-// Loop Control Statements
+// for loop - definite iterator
 
-/*
-Iterators:
- 1. for loop - Definite
- 2. while loop - Indefinite
- 3. do while loop - Indefinite
- */
+void main(){
+  for(int i = 1; i <= 10;  i++){
+    if(i % 2 == 0) {
+      print('$i');
+    }
+  }
+
+  // for ..in loop
+  List<String> planets = ["Earth","Mars","Saturn","Jupyter"] ;
+
+  for(String planet in planets){
+    print(planet);
+  }
+}
