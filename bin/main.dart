@@ -1,29 +1,31 @@
-// Revision
+// Objectives
+// 1. Default Getter and Setter
+// 2. Custom Getter and Setter
+// 3. Private Instance Variable
+
+void main(){
+  Student student = Student() ;
+
+
+  student.name = 'Naruto' ; // Calling Default Setter to set value
+  print(student.name) ; //  // Calling Default Getter to get value
+  student.percentage = 438.0;
+  double result = student.percentage ;
+  print(result);
+}
+
 
 class Student {
 
-  // Instance Variables
-  late int id ;
-  late String name ;
+  late String name ; // Instance Variable
+  late double percent ;
 
-  // default Constructor
-  Student() {
-    // This is constructor
+  set percentage(double marksSecured){
+     percent = (marksSecured / 500 ) * 100;
   }
 
-  // Named Constructor
-  Student.namedOne(){
-    // Named Constructor
+  double get percentage{
+    return percent ;
   }
 
-  // Methods
-  void study(){
-    // Local Variable
-    int marks ;
-  }
-}
-void main(){
-
-  // ClassName ReferenceVariable = Object [ Class Constructor ]
-    Student student = Student() ;
 }
