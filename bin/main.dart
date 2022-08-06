@@ -1,30 +1,73 @@
-// Objectives
-// 1. Default Getter and Setter
-// 2. Custom Getter and Setter
-// 3. Private Instance Variable
+// Inheritance
 
-void main(){
-  Student student = Student() ;
+/*
+Commonly used Inheritance: 1. Single Inheritance
+                           2. Multi-level Inheritance
+                           3. Hierarchical Inheritance
 
+-> Inheritance is a mechanism in which one object acquires properties of its
+parent class object
 
-  student.name = 'Naruto' ; // Calling Default Setter to set value
-  print(student.name) ; //  // Calling Default Getter to get value
-  student.percentage = 438.0;
-  double result = student.percentage ;
-  print(result);
+-> Super class of any class is Object:
+    . Provides default implementation of:
+    -> toString(), returns the String representation of object
+    -> hashCode Getter, returns the Hash Code of an Object
+    -> operator ==, to compare two objects
+
+Advantage:
+    . Code reusability
+    . Method Overriding
+    . Cleaner code: no repetition
+ */
+class Animal {
+  late String color ;
+
+  void eat(){
+    print('Eat !') ;
+  }
+}
+class Dog extends Animal{
+
+  late String breed ;
+
+  void bark(){
+    print('Bark!!') ;
+  }
+  @override
+  void eat(){
+    print('pedigree') ;
+  }
+
 }
 
+class Cat extends Animal {
 
-class Student {
+  late int age ;
 
-  late String name ; // Instance Variable
-  late double _percent ; // Private Instance Variable for its own Library
+  void meow(){
+    print('Meow !') ;
+  }
+  @override
+  void eat(){
+    print('Kit & Kaboodle Dry Cat Food') ;
+  }
 
-  // Instance variable with Custom Setter
-  set percentage(double marksSecured) =>_percent = (marksSecured / 500 ) * 100;
+}
 
-  // Instance variable with Custom Getter
-  double get percentage => _percent ;
+void main(){
+  Dog dog = Dog() ;
+  dog.breed = "Labrador" ;
+  dog.color = "Black" ;
+  dog.bark() ;
+  dog.eat() ;
 
+  Cat cat = Cat() ;
+  cat.age = 4 ;
+  cat.color = "White" ;
+  cat.eat() ;
+  cat.meow() ;
 
+  Animal animal = Animal() ;
+  animal.color = "Brown" ;
+  animal.eat() ;
 }
