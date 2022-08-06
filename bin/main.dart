@@ -20,24 +20,27 @@ Advantage:
     . Cleaner code: no repetition
  */
 class Animal {
-  late String color ;
+  late String color = "Brown" ;
 
   void eat(){
-    print('Eat !') ;
+    print('Animal Eat !') ;
   }
 }
 class Dog extends Animal{
 
   late String breed ;
+  @override
+  late String color = "black" ;
 
   void bark(){
     print('Bark!!') ;
   }
   @override
   void eat(){
+    super.eat() ;
     print('pedigree') ;
-  }
 
+  }
 }
 
 class Cat extends Animal {
@@ -57,9 +60,9 @@ class Cat extends Animal {
 void main(){
   Dog dog = Dog() ;
   dog.breed = "Labrador" ;
-  dog.color = "Black" ;
   dog.bark() ;
   dog.eat() ;
+  print(dog.color) ;
 
   Cat cat = Cat() ;
   cat.age = 4 ;
