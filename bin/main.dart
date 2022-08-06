@@ -1,56 +1,55 @@
-// Objective
-// 1. Inheritance with Default Constructor and Parameterised Constructor
-// 2. Inheritance with Named Constructor
+// Abstract class and Abstract method
 
-void main() {
-  Dog dog1 = Dog("Labrador", "Brown");
-  print("");
-  Dog dog2 = Dog("Pug", "White");
-  print("");
-  Dog dog3 = Dog.myNamedConstructor("German Shepherd", "Black-Brown");
+void main(){
+
+  // Shape shape = Shape() ; // Error. Cannot instantiate Abstract Class
+  Rectange rectange = Rectange() ;
+  rectange.draw() ;
+
+  Circle circle = Circle() ;
+  circle.draw() ;
 }
 
-class Animal {
-  late String color;
+abstract class Shape{
 
-  Animal(this.color) {
-    print('Animal class constructor');
+  late int x ;
+  late int y ;
+
+  void draw() ; // Abstract Method
+
+  void myNormalFunction(){
+    // some code
   }
 
-  Animal.myAnimalNamedConstructor(String color) {
-    print('Animal class named constructor');
-  }
 }
 
-class Dog extends Animal {
-  late String breed;
+class Rectange extends Shape {
 
-  Dog(String breed, String color) : super(color) {
-    print('Dog class constructor');
+  @override
+  void draw() {
+    // TODO: implement draw
+    print('Drawing Rectangle.....') ;
   }
 
-  Dog.myNamedConstructor(String breed, String color)
-      : super.myAnimalNamedConstructor(color) {
-    print('Dog class Named Constructor');
-  }
 }
 
+class Circle extends Shape {
+  @override
+  void draw() {
+    // TODO: implement draw
+    print('Drawing Circle.....') ;
+  }
+
+}
 /*
-* OUTPUT:
-Animal class named constructor
-Dog class constructor
+NOTE: Abstract Method:- To make a method abstract, use semicolon(;) instead of
+                        method body
+                      - Abstract method can only exist with Abstract class
+                      - You need to override Abstract methods in sub-class
 
-Animal class named constructor
-Dog class constructor
-
-Animal class named constructor
-Dog class Named Constructor
-* */
-
-/*
-NOTE: . By default, a constructor in a subclass calls the superclass no-argument
-      constructor.
-      . Parent class constructor is always called before child class constructor
-      . If default constructor is missing in Parent class, then you must manually
-      call one of the constructors in super class
+     Abstract class:  - Use abstract keyword to declare Abstract class
+                      - Abstract class can have Abstract Methods, Normal Methods
+                      and Instance Variables as well.
+                      - The Abstract class cannot be instantiated, you cannot
+                      create objects
  */
