@@ -1,7 +1,29 @@
-/*
-Properties of Constructors:
-        1. Used to create Objects
-        2. You can initialize your instance or field variables within Constructor
-        3. You cannot have both default and parameterized Constructors at the same time
-        4. You can have as many NAMED Constructor as you want to
- */
+// Revision
+
+class Student {
+
+  // Instance Variables
+  late int id ;
+  late String name ;
+
+  // default Constructor
+  Student() {
+    // This is constructor
+  }
+
+  // Named Constructor
+  Student.namedOne(){
+    // Named Constructor
+  }
+
+  // Methods
+  void study(){
+    // Local Variable
+    int marks ;
+  }
+}
+void main(){
+
+  // ClassName ReferenceVariable = Object [ Class Constructor ]
+    Student student = Student() ;
+}
