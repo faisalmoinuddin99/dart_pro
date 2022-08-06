@@ -18,14 +18,13 @@ void main(){
 class Student {
 
   late String name ; // Instance Variable
-  late double percent ;
+  late double _percent ; // Private Instance Variable for its own Library
 
-  set percentage(double marksSecured){
-     percent = (marksSecured / 500 ) * 100;
-  }
+  // Instance variable with Custom Setter
+  set percentage(double marksSecured) =>_percent = (marksSecured / 500 ) * 100;
 
-  double get percentage{
-    return percent ;
-  }
+  // Instance variable with Custom Getter
+  double get percentage => _percent ;
+
 
 }
