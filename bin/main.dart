@@ -1,55 +1,58 @@
-// Abstract class and Abstract method
+// Objectives
+// 1. Interface
 
 void main(){
-
-  // Shape shape = Shape() ; // Error. Cannot instantiate Abstract Class
-  Rectange rectange = Rectange() ;
-  rectange.draw() ;
-
-  Circle circle = Circle() ;
-  circle.draw() ;
+  Television tv = Television() ;
+  tv.volumeUp() ;
+  tv.volumeDown() ;
 }
 
-abstract class Shape{
-
-  late int x ;
-  late int y ;
-
-  void draw() ; // Abstract Method
-
-  void myNormalFunction(){
-    // some code
+class Remote {
+  void volumeUp(){
+    print('_________Volume Up from Remote_________') ;
   }
-
+  void volumeDown(){
+    print('_________Volume Down from Remote_________') ;
+  }
 }
 
-class Rectange extends Shape {
+// Here Remote acts as Interface
+class Television extends DishTV implements Remote, PlayStation {
+  @override
+  void volumeDown() {
+    // TODO: implement volumeDown
+    print('_________Volume Up from Television_______') ;
+  }
 
   @override
-  void draw() {
-    // TODO: implement draw
-    print('Drawing Rectangle.....') ;
+  void volumeUp() {
+    // TODO: implement volumeUp
+    print('_________Volume Down from Television_______') ;
+  }
+
+  @override
+  void setup() {
+    // TODO: implement setup
   }
 
 }
 
-class Circle extends Shape {
-  @override
-  void draw() {
-    // TODO: implement draw
-    print('Drawing Circle.....') ;
+class DishTV{
+  void connection(){
+    // code
   }
-
+}
+class PlayStation {
+  void setup(){
+    // code
+  }
 }
 /*
-NOTE: Abstract Method:- To make a method abstract, use semicolon(;) instead of
-                        method body
-                      - Abstract method can only exist with Abstract class
-                      - You need to override Abstract methods in sub-class
-
-     Abstract class:  - Use abstract keyword to declare Abstract class
-                      - Abstract class can have Abstract Methods, Normal Methods
-                      and Instance Variables as well.
-                      - The Abstract class cannot be instantiated, you cannot
-                      create objects
+-> Dart Does not have any special syntax to declare INTERFACE
+-> A INTERFACE in dart is a Normal Class
+-> An INTERFACE is used when you need concrete implementation of all of its functions
+  within its sub class
+  . It is mandatory to override all methods in the implementing class
+-> You can implement multiple class but
+  . You cannot extend multiple classes during inheritance
  */
