@@ -1,35 +1,38 @@
-// Object Oriented Programming
+// Working with Constructor in DART
+/*
+  Constructors and its types:
+        1. Default Constructor
+        2. Parameterized Constructor
+        3. Named Constructor
+        4. Constant Constructor
+ */
 
-class Student {
-  late int id ; // Instance or Field Variable
-  late String name; // Instance or Field Variable
+class Student{
 
-  void study() {
-    // code
-    print('$name is studying');
+  late int id ;
+  late String name ;
+
+  // default constructor
+  Student(){
+    print('This is my default constructor') ;
   }
-
-  void sleep() {
-    // code
-    print('$name is sleeping');
+  void setId(int id){
+    this.id = id ;
   }
-
+  int getId(){
+    return id ;
+  }
+  void setName(String name){
+    this.name = name ;
+  }
+  String getName(){
+    return name ;
+  }
 }
 
-void main() {
-
-  Student student1 = Student(); // One Object, Student1 is reference variable
-
-  student1.name = 'kelvin' ;
-  student1.id = 12 ;
-  print('Name: ${student1.name}, RollNo: ${student1.id}') ;
-  student1.sleep() ; // kelvin is sleeping
-  student1.study() ; // kelvin is studying
-  print("") ;
-  Student student2 = Student() ; // One Object, Student1 is reference variable
-  student2.id = 11 ;
-  student2.name = 'Rahul' ;
-  print('Name: ${student2.name}, RollNo: ${student2.id}') ;
-  student2.sleep() ;
-  student2.study() ;
+void main(){
+  Student s1 = Student() ;
+  s1.setId(20) ;
+  s1.setName('Faisal') ;
+  print('${s1.getId()}, ${s1.getName()}') ;
 }
